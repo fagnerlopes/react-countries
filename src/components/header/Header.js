@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {formatNumber} from '../../helpers/formatHelpers.js';
 
 export default class Header extends Component {
 
@@ -8,13 +9,13 @@ export default class Header extends Component {
   }
 
   render() {
-    const { filter } = this.props;
+    const { filter, sumPopulation, countriesCount } = this.props;
 
     return (
       <div>
         <input type="text" value={ filter } onChange={ this.handleInputChange }/> |
-        <span>Países: { this.props.countriesCount } </span> |
-        <span>População: { this.props.sumPopulation } </span> |
+        <span>Países: { countriesCount } </span> |
+        <span>População: { formatNumber(sumPopulation) } </span> |
       </div>
     );
   }
