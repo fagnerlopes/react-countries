@@ -1,0 +1,26 @@
+.country {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.border, .country {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 20px;
+}
+.country img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 5px;
+}

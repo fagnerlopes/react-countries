@@ -3,6 +3,12 @@
   font-size: 1.2rem;
 }
 
+.border {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 20px;
+}
+
 .countryCount {
   display: inline-block;
   min-width: 200px; 
