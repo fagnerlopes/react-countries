@@ -24,3 +24,5 @@ start server</br>
 ( ✔ ) Fazer com que os labels reajam ao filtro<br />
 ( ✔ ) Criar pasta 'helpers' com o arquivo formatHelpers.js<br />
 ( ✔ ) Criar função para formatar valores a partir de Intl<br />
+
+![View do projeto](./view.png);
