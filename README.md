@@ -1,7 +1,15 @@
-# react-coutries
+# react-countries
 A Bootacamp IGTI exercise.
 
-Enunciado do exercício - ✔ 
+### get started
+install dependencies</br>
+```yarn```
+
+start server</br>
+```yarn start```
+
+
+### Enunciado do exercício - ✔ 
 =====================
 
 ( ✔ ) Criar projeto a partir do projeto base<br />
