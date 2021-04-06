@@ -1,0 +1,20 @@
+.statistics {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.countryCount {
+  display: inline-block;
+  min-width: 200px; 
+  border-right: 2px solid #000;   
+}
+
+.sumPopulation {
+  display: inline-block;
+  min-width: 200px;
+  margin-left: 20px;
+}
+
+.inputFilter {
+  font-size: 2rem;
+}

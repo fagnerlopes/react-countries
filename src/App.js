@@ -68,7 +68,7 @@ export default class App extends Component {
     const { filteredCountries, filter, sumPopulation } = this.state;
     return (
       <div className="container">
-        <h1>React Countries</h1>
+        <h1 style={ styles.centeredTitle }>React Countries</h1>
         <Header 
           countriesCount={ filteredCountries.length } 
           filter={filter} 
@@ -78,5 +78,11 @@ export default class App extends Component {
         <Countries countries={filteredCountries} />
       </div>
     );
+  }
+}
+
+const styles = {
+  centeredTitle: {
+    textAlign: 'center'
   }
 }
