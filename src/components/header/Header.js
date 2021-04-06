@@ -1,12 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class Header extends Component {
+
+  handleInputChange = (event) => {
+    console.log(event.target.value);
+    const newText = event.target.value;
+
+    this.props.onChangeFilter(newText);
+  }
+
   render() {
+    const { filter } = this.props;
+
     return (
       <div>
-        <input type="text"/>
-        
+        <input type="text" value={ filter } onChange={ this.handleInputChange }/> |<span>Países: </span> |
+        <span>População: </span> |
       </div>
-    )
+    );
   }
 }
