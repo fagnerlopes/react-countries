@@ -10,6 +10,7 @@ export default class App extends Component {
       allCountries: [],
       filteredCountries: [],
       filter: "",
+      sumPopulation: 0,
     };
   }
 
@@ -27,10 +28,21 @@ export default class App extends Component {
       };
     });
 
+    const sumPopulation = this.sumPopulationFrom(allCountries);     
+
     this.setState({
       allCountries: allCountries,
-      filteredCountries: allCountries,
+      filteredCountries: Object.assign([], allCountries),
+      sumPopulation,
     });
+  }
+
+  sumPopulationFrom = (countries) => {
+    const sumPopulation = countries.reduce((acc, cur) => {
+      return acc + cur.population;
+    }, 0);
+
+    return sumPopulation;
   }
 
   handleChangeFilter = (newText) => {
@@ -38,21 +50,31 @@ export default class App extends Component {
       filter: newText,
     });
 
+    const filterLowerCase = newText.toLowerCase();
+
     const filteredCountries = this.state.allCountries.filter(country => {
-      return country.filterName.includes(newText.toLowerCase());
+      return country.filterName.includes(filterLowerCase);
     });
 
+    const sumPopulation = this.sumPopulationFrom(filteredCountries);    
+
     this.setState({
-      filteredCountries: filteredCountries,
+      filteredCountries,
+      sumPopulation,
     });
   };
 
   render() {
-    const { filteredCountries, filter } = this.state;
+    const { filteredCountries, filter, sumPopulation } = this.state;
     return (
       <div className="container">
         <h1>React Countries</h1>
-        <Header filter={filter} onChangeFilter={this.handleChangeFilter} />
+        <Header 
+          countriesCount={ filteredCountries.length } 
+          filter={filter} 
+          onChangeFilter={this.handleChangeFilter} 
+          sumPopulation={ sumPopulation }
+        />
         <Countries countries={filteredCountries} />
       </div>
     );
